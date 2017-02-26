@@ -12,10 +12,36 @@ namespace MonPremierServiceWCF
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class Service1 : IService1
     {
+
+
+        //Appel du WebService creer dans l'interface IService1.cs
+        public float GetPrice(string id)
+        {
+            //System.Threading.Thread.Sleep(10000);
+
+            switch (id)
+            {
+                case "chaussures":
+                    {
+                        return 49.0f;
+                    }
+                case "blouson":
+                    {
+                        return 129f;
+                    }
+                default:
+                    {
+                        return 99999999999999.99f;
+                    }
+            }
+        }
+
         public string GetData(int value)
         {
-            return string.Format("You entered: {0}", value);
+            return $"valeur passée en parametre : {value}";
         }
+
+        
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {

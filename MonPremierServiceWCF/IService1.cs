@@ -13,6 +13,12 @@ namespace MonPremierServiceWCF
     public interface IService1
     {
 
+
+        //creation du webService GetPrice
+        [OperationContract]
+        float GetPrice(string id);
+       
+
         [OperationContract]
         string GetData(int value);
 
